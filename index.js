@@ -1,16 +1,20 @@
-const express = require("express");
-const cors = require("cors");
+import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
+import { MongoClient, ServerApiVersion } from "mongodb";
+import checkoutRoute from "./checkoutRoute.js";
+import contactRoute from "./contactRoute.js";
+dotenv.config();
+
 const app = express();
-require("dotenv").config();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true })); 
 app.use(cors());
+app.use("/api", contactRoute);
+app.use("/api", checkoutRoute);
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASSWORD}@classicmartcluster.p18veby.mongodb.net/?retryWrites=true&w=majority`;
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -25,24 +29,21 @@ const cart = client.db("ClassicMart").collection("userCart");
 
 async function run() {
   try {
+    await client.connect(); // make sure DB is connected
+
     app.get("/products", async (req, res) => {
       let allproducts = await products.find().toArray();
       res.send(allproducts);
-    })
+    });
 
     app.post("/users", async (req, res) => {
       const user = req.body;
-
-      // Avoid adding rows in the dabase for the user alreary exist on the database.
-
       const query = { email: user.email };
       const existingUser = await users.findOne(query);
 
       if (existingUser) {
-        return res.send({ message: "user already exists on the database." });
+        return res.send({ message: "User already exists on the database." });
       }
-
-      // Adding All users (user, intructor, admin) in the database.
 
       const result = await users.insertOne(user);
       res.send(result);
@@ -55,29 +56,13 @@ async function run() {
     });
 
     app.get("/wishlist", async (req, res) => {
-        const userCarts = await cart.find().toArray();
-        res.send(userCarts);
+      const userCarts = await cart.find().toArray();
+      res.send(userCarts);
     });
-    
-    // app.get("/wishlist/:email", async (req, res) => {
-    //   try {
-    //     const email = req.params.email;
-    //     const query = { email: email };
-    //     const userCarts = await cart.find(query);
-    //     console.log(userCarts);
-    //     res.send(userCarts);
-    //   } catch (error) {
-    //     console.error(error);
-    //     res.status(500).json({ message: "Internal Server Error" });
-    //   }
-    // });
-    
-    
 
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } catch {
-    // Ensures that the client will close when you finish/error
-    console.warn("Deployment problem");
+    console.log("Pinged your deployment. Successfully connected to MongoDB!");
+  } catch (err) {
+    console.error("Deployment problem", err);
   }
 }
 run().catch(console.dir);
@@ -87,5 +72,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Server listening on port ${port}`);
 });

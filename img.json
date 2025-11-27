@@ -1,0 +1,171 @@
+[
+  {
+    "name": "Cartier",
+    "price": 279.99,
+    "vendor": "CityTime",
+    "type": "Analog",
+    "colors": ["Silver", "Rose Gold"],
+    "sizes": ["Small", "Medium"],
+    "description": "Minimalist design for city lifestyle lovers.",
+    "images": [
+      "https://i.ibb.co.com/0pC2Wc88/c1.png",
+      "https://i.ibb.co.com/qLxp3MsJ/c2.png"
+    ]
+  },
+  {
+    "name": "IWC",
+    "price": 399.99,
+    "vendor": "SpeedMasters",
+    "type": "Chronograph",
+    "colors": ["Black", "Red"],
+    "sizes": ["Medium", "Large"],
+    "description": "Chronograph watch inspired by racing and high speed.",
+    "images": [
+      "https://i.ibb.co.com/Xr1hZSqh/i1.png",
+      "https://i.ibb.co.com/DDHmSRQr/i2.png"
+    ]
+  },
+  {
+    "name": "Ocean Breeze",
+    "price": 329.99,
+    "vendor": "SeaTime",
+    "type": "Diver",
+    "colors": ["Blue", "Silver"],
+    "sizes": ["Medium", "Large"],
+    "description": "Waterproof diver watch for ocean adventures.",
+    "images": [
+      "https://i.ibb.co.com/nMszq5w2/pngwing-com-2.png",
+      "https://i.ibb.co.com/BKrW7T7c/pngwing-com-3.png"
+    ]
+  },
+  {
+    "name": "Classic Heritage",
+    "price": 459.99,
+    "vendor": "TimeLegacy",
+    "type": "Analog",
+    "colors": ["Gold", "Brown Leather"],
+    "sizes": ["Medium", "Large"],
+    "description": "Vintage-inspired watch with classic elegance.",
+    "images": [
+      "https://i.ibb.co.com/My2hdDH3/pngwing-com-4.png",
+      "https://i.ibb.co.com/YBQKdBbk/pngwing-com-7.png"
+    ]
+  },
+  {
+    "name": "Smart Companion",
+    "price": 499.99,
+    "vendor": "InnoTech",
+    "type": "Smartwatch",
+    "colors": ["Black", "Silver"],
+    "sizes": ["Small", "Medium"],
+    "description": "Your everyday smartwatch companion with notifications & fitness tracking.",
+    "images": [
+      "https://i.ibb.co.com/qM41YhKj/pngwing-com-9.png",
+      "https://i.ibb.co.com/b5W2gjvM/pngwing-com-10.png"
+    ]
+  },
+  {
+    "name": "Explorer X",
+    "price": 389.99,
+    "vendor": "AdventureTime",
+    "type": "Analog",
+    "colors": ["Black", "Olive"],
+    "sizes": ["Medium", "Large"],
+    "description": "Adventure-ready watch built for the rugged outdoors.",
+    "images": [
+      "https://i.ibb.co.com/SDfmPXWn/pngwing-com-11.png",
+      "https://i.ibb.co.com/0jfFs81g/pngwing-com-12.png"
+    ]
+  },
+  {
+    "name": "Luxury Icon",
+    "price": 599.99,
+    "vendor": "PrestigeTime",
+    "type": "Analog",
+    "colors": ["Gold", "Black"],
+    "sizes": ["Small", "Medium"],
+    "description": "Luxury timepiece symbolizing sophistication and style.",
+    "images": [
+      "https://i.ibb.co.com/yB5GRnx3/pngwing-com-14.png",
+      "https://i.ibb.co.com/rKmskqYY/pngwing-com.png"
+    ]
+  },
+  {
+    "name": "Tissot",
+    "price": 279.99,
+    "vendor": "HealthTech",
+    "type": "Smartwatch",
+    "colors": ["Black", "Gray"],
+    "sizes": ["Small", "Medium"],
+    "description": "Smartwatch designed to track workouts and health metrics.",
+    "images": [
+      "https://i.ibb.co.com/Xff2dfdd/t1.png",
+      "https://i.ibb.co.com/N6xGNtXR/t2.png"
+    ]
+  },
+  {
+    "name": "Classic Elegance",
+    "price": 499.99,
+    "vendor": "TimeCrafters",
+    "type": "Analog",
+    "colors": ["Silver", "Gold"],
+    "sizes": ["Small", "Medium", "Large"],
+    "description": "A timeless analog watch combining elegance with precision.",
+    "images": [
+      "https://i.ibb.co/VDTTH75/watch1v1.png",
+      "https://i.ibb.co/FWbDSZ7/watch-1v2.png"
+    ]
+  },
+  {
+    "name": "Sporty Precision",
+    "price": 349.95,
+    "vendor": "ChronoMasters",
+    "type": "Digital",
+    "colors": ["Silver", "Gold"],
+    "sizes": ["Medium", "Large", "Extra Large"],
+    "description": "A sporty digital watch designed for athletes and adventurers.",
+    "images": [
+      "https://i.ibb.co/MSHHZW6/watch-2v1.png",
+      "https://i.ibb.co/ysXgZVn/watch-2v2.png"
+    ]
+  },
+  {
+    "name": "Tech Explorer",
+    "price": 449.99,
+    "vendor": "InnoTime",
+    "type": "Smartwatch",
+    "colors": ["Black", "Gold"],
+    "sizes": ["Small", "Medium", "Large"],
+    "description": "Smartwatch with advanced tracking features for tech enthusiasts.",
+    "images": [
+      "https://i.ibb.co/Wnq7dbX/watch-8v1.png",
+      "https://i.ibb.co/P6Sv3vH/watch-8v2.png"
+    ]
+  },
+  {
+    "name": "Adventurer's Choice",
+    "price": 299.99,
+    "vendor": "Expedition Gear",
+    "type": "Analog",
+    "colors": ["Pink", "Rose Gold"],
+    "sizes": ["Medium", "Large", "Extra Large"],
+    "description": "Rugged analog watch perfect for explorers and travelers.",
+    "images": [
+      "https://i.ibb.co/Vw3bf4F/Watch18v1.png",
+      "https://i.ibb.co/ph33VGQ/Watch18v2.png"
+    ]
+  },
+  {
+    "name": "Fashion Fusion",
+    "price": 499.95,
+    "vendor": "StyleCraft",
+    "type": "Analog",
+    "colors": ["Matte Black", "Dark Black"],
+    "sizes": ["Small", "Medium", "Large"],
+    "description": "Elegant design merging fashion with functional timekeeping.",
+    "images": [
+      "https://i.ibb.co/mh5N2p2/watch-14v1.png",
+      "https://i.ibb.co/KWZJfNL/watch-14v2.png"
+    ]
+  }
+]
