@@ -10,24 +10,24 @@ router.post("/contact", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process?.env?.EMAIL_USER,
+        pass: process?.env?.EMAIL_PASS,
       },
     });
 
-const mailOptions = {
-  from: process.env.EMAIL_USER, 
-  replyTo: email, 
-  to: process.env.EMAIL_USER,
-  subject: `New Contact Message from ${name}`,
-  text: `
+    const mailOptions = {
+      from: process?.env?.EMAIL_USER,
+      replyTo: email,
+      to: process?.env?.EMAIL_USER,
+      subject: `New Contact Message from ${name}`,
+      text: `
 Name: ${name}
 Email: ${email}
 
 Message:
 ${message}
   `,
-};
+    };
 
     await transporter.sendMail(mailOptions);
     res.json({ message: "Message sent successfully!" });
