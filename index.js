@@ -1,7 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import { MongoClient, ServerApiVersion } from "mongodb";
+import { MongoClient, ObjectId, ServerApiVersion } from "mongodb"; // ✅ ObjectId added
 import checkoutRoute from "./checkoutRoute.js";
 import contactRoute from "./contactRoute.js";
 
@@ -48,7 +48,7 @@ connectDB();
 
 app.get("/products", async (req, res) => {
   try {
-    await connectDB(); // নিশ্চিত করুন connection আছে
+    await connectDB();
     const allproducts = await products.find().toArray();
     res.send(allproducts);
   } catch (err) {
@@ -96,6 +96,23 @@ app.get("/wishlist", async (req, res) => {
   } catch (err) {
     console.error("Error fetching wishlist:", err);
     res.status(500).send({ error: "Failed to fetch wishlist" });
+  }
+});
+
+app.delete("/wishlist/:id", async (req, res) => {
+  try {
+    await connectDB();
+    const { id } = req.params;
+    const result = await cart.deleteOne({ _id: new ObjectId(id) });
+    
+    if (result.deletedCount === 0) {
+      return res.status(404).send({ error: "Item not found" });
+    }
+    
+    res.send({ message: "Item deleted successfully", result });
+  } catch (err) {
+    console.error("Error deleting item:", err);
+    res.status(500).send({ error: "Failed to delete item" });
   }
 });
 
